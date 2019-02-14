@@ -1,0 +1,12 @@
+<h3>Главная страница</h3>
+
+<%= form_for :main_form, url: pages_path do |f| %>
+  <p>
+    Чтобы узнать вес пользователя, введите ID его медицинской карты:<br>
+    <%= f.text_field :user_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Поиск" %>
+  </p>
+<% end %>
