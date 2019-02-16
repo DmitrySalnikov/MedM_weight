@@ -1,2 +1,17 @@
 <h3>Вес пользователя:</h3>
-<p><%= @user_id %></p>
+
+<script type="text/javascript">
+  var user_id = `<%= @user_id %>`;
+
+  $.ajax({
+    url: "/print_weight?user_id="+user_id,
+    dataType: "json"
+  }).done(function(response, status, ajaxOpts) {
+    console.log(response, status, ajaxOpts)
+    $('#weight').text(response["response"]);
+  }).fail(function(error) {
+    console.log(error);
+  });
+</script>
+
+<p id="weight"></p>
