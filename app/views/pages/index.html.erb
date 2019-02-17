@@ -3,10 +3,12 @@
 <%= form_for :main_form, url: pages_path do |f| %>
   <p>
     Чтобы узнать вес пользователя, введите ID его медицинской карты:<br>
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id, :size=>"30" %>
   </p>
 
-  <%= @error %>
+  <font color="red" id="wrong_id">
+    <%= @wrong_id %>
+  </font>
 
   <p>
     <%= f.submit "Поиск" %>
