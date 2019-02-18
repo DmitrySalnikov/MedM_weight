@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение обрабатывает введенный ID мед. карты, если такой ID есть в базе, то приложение на новой странице выводит вес юзера, обновляя значение каждую секунду. Если в это время происходит ошибка (например, соединения с сетью), приложение выводит предупреждение. В случае, если у юзера отсутствует запись о весе, выводится соответствующий текст.
+Запуск rails s.
 
-Things you may want to cover:
+ID с весом 55.0 kg 9c9b918d-cab9-41b6-af38-824614e322f8
+ID без записи о весе 4d14187a-dc04-4797-a084-94fedfc0f709
 
-* Ruby version
+* интеграционные тесты, test/controllers/pages_controller_test.rb, запуск rails test
 
-* System dependencies
+* системные тесты, test/system/pages_test.rb, запуск rails test:system
 
-* Configuration
+* документация к API https://temp.medm-test.com/docs/api/v3/index.html#weight
 
-* Database creation
+* Rails version 5.2.2
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby version 2.6.1p33

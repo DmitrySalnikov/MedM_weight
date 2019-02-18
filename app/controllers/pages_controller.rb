@@ -32,11 +32,16 @@ class PagesController < ApplicationController
       user_id + '/measurements/weights?sort_by=updated_at&order=desc&' +
       'count=1&auth_token=' + token();
     xml = Nokogiri::XML(open(url));
-    render json: {response: xml.at_xpath("//value").content +
-      ' ' + xml.at_xpath("//units").content}
+    if (!xml.at_xpath("//value"))
+      render json: {response: "данные отсутствуют"}
+    else
+      render json: {response: xml.at_xpath("//value").content +
+        ' ' + xml.at_xpath("//units").content}
+    end
   end
 
   private def token
     "09321865-5587-4ae5-b1ed-c5b31d107424"
   end
+
 end
